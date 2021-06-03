@@ -21,7 +21,7 @@ public class TrafficLightGui extends JFrame implements ActionListener {
 
     private TrafficLightCtrl trafficLightCtrl = null;
 
-
+    //constructor nimmt ein ctrl-object, gui-objekt hat jetzt diese spezifische ctrl als eigenschaft, same with initLights (s.u.)
     public TrafficLightGui(TrafficLightCtrl ctrl){
         super(NAME_OF_THE_GAME);
         trafficLightCtrl = ctrl;
@@ -30,8 +30,15 @@ public class TrafficLightGui extends JFrame implements ActionListener {
     }
 
     private void initLights(TrafficLightCtrl ctrl) {
-        //TODO implement a part of the pattern here
         //create the TrafficLight
+        green = new TrafficLight(Color.green);
+        yellow = new TrafficLight(Color.yellow);
+        red = new TrafficLight(Color.red);
+        //TODO - so richtig?
+        ctrl.getGreenState().addObserver(green);
+        ctrl.getYellowState().addObserver(yellow);
+        ctrl.getRedState().addObserver(red);
+            // die info, welches licht anfangen soll, kommt von ctrl
         //connect subject and observer
     }
 
