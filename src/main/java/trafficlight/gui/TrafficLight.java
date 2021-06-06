@@ -22,9 +22,9 @@ public class TrafficLight extends Light implements Observer {
 
     //TODO implement a part of the pattern here
 
-    //toggle color in TrafficLight according to State
+    //toggle color in TrafficLight
     @Override
     public void update(Object o) {
-        turnOn(!this.isOn);
+        turnOn(!this.isOn());
     }
 }

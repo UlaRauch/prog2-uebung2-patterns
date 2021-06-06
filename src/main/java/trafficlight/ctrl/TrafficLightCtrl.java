@@ -5,6 +5,9 @@ import trafficlight.states.State;
 
 public class TrafficLightCtrl {
 
+    //für Singleton
+    private static TrafficLightCtrl instance = null;
+
     private State greenState;
 
     private State redState;
@@ -19,7 +22,8 @@ public class TrafficLightCtrl {
 
     private boolean doRun = true;
 
-    public TrafficLightCtrl() {
+    //private Singleton constructor
+    private TrafficLightCtrl() {
         super();
         initStates(); //setzt currentState auf greenState und previousState auf yellowState
         gui = new TrafficLightGui(this);
@@ -27,6 +31,15 @@ public class TrafficLightCtrl {
         //TODO useful to update the current state
         currentState.notifyObservers();
     }
+
+    public static TrafficLightCtrl getInstance() {
+        if (instance == null) {
+            instance = new TrafficLightCtrl();
+        }
+        return instance;
+    }
+
+
 
     private void initStates() {
         greenState = new State() {

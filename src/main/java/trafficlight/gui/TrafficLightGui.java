@@ -34,12 +34,10 @@ public class TrafficLightGui extends JFrame implements ActionListener {
         green = new TrafficLight(Color.green);
         yellow = new TrafficLight(Color.yellow);
         red = new TrafficLight(Color.red);
-        //TODO - so richtig?
+        //connect subject and observer
         ctrl.getGreenState().addObserver(green);
         ctrl.getYellowState().addObserver(yellow);
         ctrl.getRedState().addObserver(red);
-            // die info, welches licht anfangen soll, kommt von ctrl
-        //connect subject and observer
     }
 
     private void init() {
@@ -72,6 +70,10 @@ public class TrafficLightGui extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e){
         if (ACTION_COMMAND_STOP.equals(e.getActionCommand())){
            trafficLightCtrl.stop();
+           //removeObserver hier sinnvoll?
+           trafficLightCtrl.getGreenState().removeObserver(green);
+           trafficLightCtrl.getYellowState().removeObserver(yellow);
+           trafficLightCtrl.getRedState().removeObserver(red);
         }
     }
 }
