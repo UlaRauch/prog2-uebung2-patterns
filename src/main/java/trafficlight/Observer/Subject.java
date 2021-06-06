@@ -17,7 +17,11 @@ public class Subject {
 
     public void notifyObservers() {
         for (Observer o : observerList) {
-            o.update(this);
+            o.update();
         }
+    }
+
+    public List<Observer> getObserverList() {
+        return observerList;
     }
 }

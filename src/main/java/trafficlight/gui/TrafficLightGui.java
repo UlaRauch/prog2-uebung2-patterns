@@ -60,6 +60,17 @@ public class TrafficLightGui extends JFrame implements ActionListener {
         pack();
     }
 
+    public TrafficLight getGreen() {
+        return green;
+    }
+
+    public TrafficLight getYellow() {
+        return yellow;
+    }
+
+    public TrafficLight getRed() {
+        return red;
+    }
 
     public void showErrorMessage(Exception e) {
         JOptionPane pane = new JOptionPane();

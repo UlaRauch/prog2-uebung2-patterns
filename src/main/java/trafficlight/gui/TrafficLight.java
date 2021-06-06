@@ -24,7 +24,7 @@ public class TrafficLight extends Light implements Observer {
 
     //toggle color in TrafficLight
     @Override
-    public void update(Object o) {
+    public void update() {
         turnOn(!this.isOn());
     }
 }

@@ -39,7 +39,13 @@ public class TrafficLightCtrl {
         return instance;
     }
 
+    public void resetCtrl() {
+        currentState = greenState;
+        currentState.notifyObservers();
+        previousState = yellowState;
+        previousState.notifyObservers();
 
+    }
 
     private void initStates() {
         greenState = new State() {
@@ -104,6 +110,18 @@ public class TrafficLightCtrl {
 
     public State getYellowState() {
         return yellowState;
+    }
+
+    public State getCurrentState() {
+        return currentState;
+    }
+
+    public State getPreviousState() {
+        return previousState;
+    }
+
+    public TrafficLightGui getGui() {
+        return gui;
     }
 
     public void run()  {
