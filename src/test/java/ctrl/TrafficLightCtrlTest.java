@@ -26,17 +26,13 @@ public class TrafficLightCtrlTest {
         assertEquals(testctrl.getGreenState(), testctrl.getCurrentState());
     }
 
-    /*
     @Test
-    @DisplayName("Is green Light on")
-    public void testTrafficLightCtrlIsGreenLightOn () {
+    @DisplayName("Does yellowState follow greenState")
+    public void testTrafficLightCtrlYellowAfterGreen () {
         TrafficLightCtrl testctrl = TrafficLightCtrl.getInstance();
-        testctrl.resetCtrl();
-        assertTrue(testctrl.getGui().getGreen().isOn());
+        while (testctrl.getPreviousState() == testctrl.getGreenState()) {
+            assertSame(testctrl.getCurrentState(), testctrl.getYellowState());
+        }
     }
-
-
-     */
-
 
 }

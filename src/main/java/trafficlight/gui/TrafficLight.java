@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class TrafficLight extends Light implements Observer {
 
-    TrafficLight(Color color) {
+    public TrafficLight(Color color) {
         super(color);
     }//geerbt von Light: Color on = this <- color argument
 
