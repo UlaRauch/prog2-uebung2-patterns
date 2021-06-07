@@ -1,3 +1,6 @@
+repo: https://github.com/UlaRauch/prog2-uebung2-patterns/tree/master
+
+
 # Traffic Light
 
 Das ist das Codetemplate für die zweite Übung in Programmierung 2.
