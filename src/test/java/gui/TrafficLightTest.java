@@ -38,4 +38,6 @@ public class TrafficLightTest {
         testState.removeObserver(testgreen);
     }
 
+    //... same procedure for all lights
+
 }

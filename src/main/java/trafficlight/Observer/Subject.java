@@ -12,7 +12,7 @@ public class Subject {
     }
 
     public void removeObserver(Observer observer) {
-        this.observerList.add(observer);
+        this.observerList.remove(observer);
     }
 
     public void notifyObservers() {
